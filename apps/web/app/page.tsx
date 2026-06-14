@@ -425,7 +425,7 @@ export default function DashboardPage() {
             <div className={styles.modalHeaderGrid}>
               <div>
                 <span className={styles.label}>Intake Date</span>
-                <div style={{ fontWeight: 600 }}>{new Date(selectedJob.createdDate).toLocaleString()}</div>
+                <div style={{ fontWeight: 600 }} suppressHydrationWarning>{new Date(selectedJob.createdDate).toLocaleString()}</div>
               </div>
               <div>
                 <span className={styles.label}>Customer</span>

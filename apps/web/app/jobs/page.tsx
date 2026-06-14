@@ -325,7 +325,7 @@ export default function JobsPage() {
                     return (
                       <tr key={job.id}>
                         <td style={{ fontWeight: 700 }}>#{job.jobNumber}</td>
-                        <td>{new Date(job.createdDate).toLocaleDateString()}</td>
+                        <td suppressHydrationWarning>{new Date(job.createdDate).toLocaleDateString()}</td>
                         <td>
                           <div style={{ fontWeight: 600 }}>{cust?.name}</div>
                           <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>{cust?.mobile}</div>
@@ -888,7 +888,7 @@ export default function JobsPage() {
             <div className={styles.modalHeaderGrid}>
               <div>
                 <span className={styles.label}>Intake Date</span>
-                <div style={{ fontWeight: 600 }}>{new Date(selectedJob.createdDate).toLocaleString()}</div>
+                <div style={{ fontWeight: 600 }} suppressHydrationWarning>{new Date(selectedJob.createdDate).toLocaleString()}</div>
               </div>
               <div>
                 <span className={styles.label}>Customer Account</span>

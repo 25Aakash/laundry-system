@@ -43,7 +43,7 @@ export default function Header({ onToggleSidebar }: HeaderProps) {
           style={{ background: 'transparent', border: '1px solid var(--border-color)', boxShadow: 'none' }}
         >
           <QrCode size={16} />
-          <span>Quick Scan</span>
+          <span className={styles.hideOnMobile}>Quick Scan</span>
         </button>
 
         <button 
@@ -51,7 +51,7 @@ export default function Header({ onToggleSidebar }: HeaderProps) {
           className={styles.quickActionBtn}
         >
           <Plus size={16} />
-          <span>Create New Job</span>
+          <span className={styles.hideOnMobile}>Create New Job</span>
         </button>
       </div>
     </header>

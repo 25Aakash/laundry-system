@@ -4,6 +4,8 @@
   background-color: var(--bg-app);
   position: relative;
   overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 /* Background Glowing Orbs for Aesthetics */
@@ -147,6 +149,8 @@
   min-height: 100vh;
   position: relative;
   z-index: 1;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .header {
@@ -178,6 +182,8 @@
 .contentBody {
   padding: 2rem;
   flex: 1;
+  width: 100%;
+  max-width: 100%;
 }
 
 /* Quick Action Trigger Button */
@@ -282,6 +288,7 @@
 
   .mainContent {
     margin-left: 0 !important;
+    width: 100%;
   }
 
   .hamburgerBtn {
@@ -320,6 +327,10 @@
   .quickActionBtn {
     padding: 0.4rem 0.75rem;
     font-size: 0.8rem;
+  }
+  
+  .hideOnMobile {
+    display: none;
   }
 }
 

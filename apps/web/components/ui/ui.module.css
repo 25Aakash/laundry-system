@@ -441,4 +441,27 @@
   }
 }
 
+/* Responsive List Panel height control */
+.listPanel {
+  min-height: calc(100vh - 120px);
+}
+@media (max-width: 1200px) {
+  .listPanel {
+    min-height: auto;
+  }
+}
+
+/* Enforce layout children to shrink and not push page width */
+.layoutLeftFixed > *,
+.layoutScan > *,
+.layoutRightFixed > *,
+.layoutJobs > *,
+.layoutRight240 > *,
+.layoutThreeCol > *,
+.gridTwoCol > *,
+.formRegisterGrid > * {
+  min-width: 0;
+}
+
+
 

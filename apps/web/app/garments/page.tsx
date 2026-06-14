@@ -128,7 +128,7 @@ export default function GarmentsPage() {
     <div className={styles.layoutLeftFixed}>
       
       {/* Left Column: Garment List & Filter */}
-      <div className="glass-panel" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem', minHeight: 'calc(100vh - 120px)' }}>
+      <div className={`glass-panel ${styles.listPanel}`} style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <h3 className={styles.cardTitle}>Garments</h3>
           <button 
@@ -215,7 +215,7 @@ export default function GarmentsPage() {
                         {selectedGarment.brand} {garmentCategory?.name}
                       </h2>
                     </div>
-                    <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                    <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }} suppressHydrationWarning>
                       Registered: {new Date(selectedGarment.createdDate).toLocaleDateString()}
                     </span>
                   </div>
@@ -293,7 +293,7 @@ export default function GarmentsPage() {
                   <Calendar size={20} />
                 </div>
                 <div>
-                  <h5 style={{ fontSize: '1rem', fontWeight: 800 }}>{lastVisit}</h5>
+                  <h5 style={{ fontSize: '1rem', fontWeight: 800 }} suppressHydrationWarning>{lastVisit}</h5>
                   <span className={styles.label} style={{ fontSize: '0.65rem' }}>Last Visit Date</span>
                 </div>
               </div>
@@ -329,7 +329,7 @@ export default function GarmentsPage() {
                       jobsList.map(job => (
                         <tr key={job.id}>
                           <td style={{ fontWeight: 700 }}>#{job.jobNumber}</td>
-                          <td>{new Date(job.date).toLocaleDateString()}</td>
+                          <td suppressHydrationWarning>{new Date(job.date).toLocaleDateString()}</td>
                           <td>{job.service}</td>
                           <td>{job.remarks}</td>
                           <td>

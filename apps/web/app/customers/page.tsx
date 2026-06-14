@@ -62,7 +62,7 @@ export default function CustomersPage() {
     <div className={styles.layoutLeftFixed}>
       
       {/* Left Column: Customer List & Search */}
-      <div className="glass-panel" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem', minHeight: 'calc(100vh - 120px)' }}>
+      <div className={`glass-panel ${styles.listPanel}`} style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
         <div style={{ display: 'flex', justifyItems: 'center', justifyContent: 'space-between', alignItems: 'center' }}>
           <h3 className={styles.cardTitle}>Customers</h3>
           <button 
@@ -135,7 +135,7 @@ export default function CustomersPage() {
                     {selectedCustomer.name}
                   </h2>
                 </div>
-                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }} suppressHydrationWarning>
                   Registered: {new Date(selectedCustomer.createdDate).toLocaleDateString()}
                 </span>
               </div>
@@ -230,7 +230,7 @@ export default function CustomersPage() {
                           <td>{g.brand}</td>
                           <td>{g.color}</td>
                           <td>{g.size}</td>
-                          <td>{new Date(g.createdDate).toLocaleDateString()}</td>
+                          <td suppressHydrationWarning>{new Date(g.createdDate).toLocaleDateString()}</td>
                         </tr>
                       ))
                     ) : (
@@ -263,7 +263,7 @@ export default function CustomersPage() {
                       customerJobs.map(job => (
                         <tr key={job.id}>
                           <td style={{ fontWeight: 700 }}>#{job.jobNumber}</td>
-                          <td>{new Date(job.createdDate).toLocaleDateString()}</td>
+                          <td suppressHydrationWarning>{new Date(job.createdDate).toLocaleDateString()}</td>
                           <td>{job.remarks || '-'}</td>
                           <td>
                             <span className={`${styles.badge} ${
