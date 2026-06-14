@@ -206,7 +206,7 @@ export default function GarmentsPage() {
               {/* Profile Card */}
               <div className="glass-panel" style={{ padding: '2rem', minHeight: '300px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
+                  <div className={styles.modalHeaderGrid} style={{ marginBottom: '1rem', alignItems: 'flex-start' }}>
                     <div>
                       <span style={{ fontSize: '0.7rem', color: 'var(--primary)', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                         Garment Master Card

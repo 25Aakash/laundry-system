@@ -237,14 +237,7 @@ export default function JobsPage() {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
       
       {/* Header Tabs */}
-      <div 
-        style={{
-          display: 'flex',
-          gap: '0.5rem',
-          borderBottom: '1px solid var(--border-color)',
-          paddingBottom: '0.75rem',
-        }}
-      >
+      <div className={styles.scrollableTabsRow}>
         <button
           onClick={() => setActiveTab('list')}
           className={styles.btn}
@@ -278,7 +271,7 @@ export default function JobsPage() {
       {activeTab === 'list' && (
         <div className="glass-panel" style={{ padding: '1.5rem' }}>
           {/* Filters Bar */}
-          <div style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem', alignItems: 'center' }}>
+          <div className={styles.flexResponsive} style={{ marginBottom: '1.5rem' }}>
             <div style={{ position: 'relative', flex: 1 }}>
               <Search size={16} style={{ position: 'absolute', left: '12px', top: '12px', color: 'var(--text-muted)' }} />
               <input
@@ -291,7 +284,7 @@ export default function JobsPage() {
               />
             </div>
 
-            <div style={{ display: 'flex', gap: '0.35rem' }}>
+            <div className={styles.scrollableFilterRow}>
               {['All', 'Received', 'In Process', 'Ready', 'Delivered'].map(status => (
                 <button
                   key={status}
@@ -892,7 +885,7 @@ export default function JobsPage() {
       >
         {selectedJob && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}>
+            <div className={styles.modalHeaderGrid}>
               <div>
                 <span className={styles.label}>Intake Date</span>
                 <div style={{ fontWeight: 600 }}>{new Date(selectedJob.createdDate).toLocaleString()}</div>

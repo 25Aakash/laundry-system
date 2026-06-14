@@ -99,19 +99,7 @@ export default function DashboardPage() {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
       
       {/* Welcome Banner */}
-      <div 
-        className="glass-panel" 
-        style={{ 
-          padding: '1.75rem 2rem', 
-          background: 'linear-gradient(135deg, rgba(79, 70, 229, 0.06) 0%, rgba(255, 255, 255, 0.8) 100%)',
-          border: '1px solid rgba(79, 70, 229, 0.15)',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '1.5rem',
-        }}
-      >
+      <div className={`glass-panel ${styles.welcomeBanner}`}>
         <div>
           <h2 style={{ fontSize: '1.75rem', fontWeight: 800, fontFamily: 'var(--font-display)' }}>
             Welcome back, Alex! 👋
@@ -122,7 +110,7 @@ export default function DashboardPage() {
         </div>
 
         {/* UNIFIED GLOBAL SEARCH BAR */}
-        <div style={{ position: 'relative', width: '380px', minWidth: '280px' }}>
+        <div className={styles.welcomeBannerSearch}>
           <div style={{ position: 'relative' }}>
             <Search size={16} style={{ position: 'absolute', left: '12px', top: '12px', color: 'var(--text-muted)' }} />
             <input
@@ -434,7 +422,7 @@ export default function DashboardPage() {
       >
         {selectedJob && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}>
+            <div className={styles.modalHeaderGrid}>
               <div>
                 <span className={styles.label}>Intake Date</span>
                 <div style={{ fontWeight: 600 }}>{new Date(selectedJob.createdDate).toLocaleString()}</div>

@@ -126,7 +126,7 @@ export default function CustomersPage() {
           <>
             {/* Customer Details Card */}
             <div className="glass-panel" style={{ padding: '2rem', position: 'relative' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.5rem' }}>
+              <div className={styles.modalHeaderGrid} style={{ marginBottom: '1.5rem', alignItems: 'flex-start' }}>
                 <div>
                   <span style={{ fontSize: '0.7rem', color: 'var(--primary)', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                     Customer Profile

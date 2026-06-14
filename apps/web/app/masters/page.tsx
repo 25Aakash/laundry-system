@@ -57,14 +57,7 @@ export default function MastersPage() {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
       
       {/* Tab Selectors */}
-      <div 
-        style={{
-          display: 'flex',
-          gap: '0.5rem',
-          borderBottom: '1px solid var(--border-color)',
-          paddingBottom: '0.75rem',
-        }}
-      >
+      <div className={styles.scrollableTabsRow}>
         <button
           onClick={() => { setActiveTab('categories'); setEditingId(null); }}
           className={`${styles.btn}`}
