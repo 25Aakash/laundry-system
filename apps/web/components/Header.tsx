@@ -1,10 +1,14 @@
 'use client';
 
 import { usePathname, useRouter } from 'next/navigation';
-import { Plus, QrCode } from 'lucide-react';
+import { Plus, QrCode, Menu } from 'lucide-react';
 import styles from './layout.module.css';
 
-export default function Header() {
+interface HeaderProps {
+  onToggleSidebar: () => void;
+}
+
+export default function Header({ onToggleSidebar }: HeaderProps) {
   const pathname = usePathname();
   const router = useRouter();
 
@@ -21,7 +25,16 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <h1 className={styles.pageTitle}>{getPageTitle()}</h1>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <button 
+          className={styles.hamburgerBtn} 
+          onClick={onToggleSidebar}
+          aria-label="Open sidebar"
+        >
+          <Menu size={24} />
+        </button>
+        <h1 className={styles.pageTitle}>{getPageTitle()}</h1>
+      </div>
 
       <div className={styles.headerActions}>
         <button 

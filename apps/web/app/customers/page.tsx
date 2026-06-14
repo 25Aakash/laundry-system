@@ -59,7 +59,7 @@ export default function CustomersPage() {
   };
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '360px 1fr', gap: '2rem', alignItems: 'start' }}>
+    <div className={styles.layoutLeftFixed}>
       
       {/* Left Column: Customer List & Search */}
       <div className="glass-panel" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem', minHeight: 'calc(100vh - 120px)' }}>
@@ -184,7 +184,7 @@ export default function CustomersPage() {
             </div>
 
             {/* Quick Metrics */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            <div className={styles.gridTwoCol}>
               <div className="glass-panel" style={{ padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
                 <div style={{ width: '48px', height: '48px', borderRadius: 'var(--radius-md)', background: 'var(--primary-glow)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Shirt size={24} />
@@ -322,7 +322,7 @@ export default function CustomersPage() {
             />
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+          <div className={styles.gridTwoCol}>
             <div className={styles.inputGroup}>
               <label className={styles.label}>Mobile Number *</label>
               <input
@@ -346,7 +346,7 @@ export default function CustomersPage() {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+          <div className={styles.gridTwoCol}>
             <div className={styles.inputGroup}>
               <label className={styles.label}>Email Address</label>
               <input

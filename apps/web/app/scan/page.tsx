@@ -62,7 +62,7 @@ export default function ScanPage() {
   };
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '400px 1fr', gap: '2rem', alignItems: 'start' }}>
+    <div className={styles.layoutScan}>
       
       {/* Left Column: QR Scan Area (Simulated Camera Scanner & Quick Preset Clicks) */}
       <div className="glass-panel" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>

@@ -2,10 +2,15 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutDashboard, Users, Shirt, ClipboardList, QrCode, Settings, WashingMachine } from 'lucide-react';
+import { LayoutDashboard, Users, Shirt, ClipboardList, QrCode, Settings, WashingMachine, X } from 'lucide-react';
 import styles from './layout.module.css';
 
-export default function Sidebar() {
+interface SidebarProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   const pathname = usePathname();
 
   const menuItems = [
@@ -18,11 +23,20 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className={styles.sidebar}>
+    <aside className={`${styles.sidebar} ${isOpen ? styles.sidebarActive : ''}`}>
       <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-        <div className={styles.logoArea}>
-          <WashingMachine className={styles.logoIcon} size={28} />
-          <span className={styles.logoText}>LaunderERP</span>
+        <div className={styles.logoArea} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <WashingMachine className={styles.logoIcon} size={28} />
+            <span className={styles.logoText}>LaunderERP</span>
+          </div>
+          <button 
+            className={styles.sidebarCloseBtn} 
+            onClick={onClose} 
+            aria-label="Close sidebar"
+          >
+            <X size={20} />
+          </button>
         </div>
 
         <nav className={styles.nav}>
@@ -42,7 +56,6 @@ export default function Sidebar() {
           })}
         </nav>
       </div>
-
     </aside>
   );
 }

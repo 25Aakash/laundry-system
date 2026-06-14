@@ -394,7 +394,7 @@ export default function JobsPage() {
 
       {/* VIEW: CREATE JOB (ENHANCED INLINE POS FLOW) */}
       {activeTab === 'create' && (
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: '2rem', alignItems: 'start' }}>
+        <div className={styles.layoutJobs}>
           
           {/* Left Check-in Intake Area */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
@@ -463,7 +463,7 @@ export default function JobsPage() {
                     </button>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                  <div className={styles.gridTwoCol}>
                     <div className={styles.inputGroup} style={{ marginBottom: 0 }}>
                       <label className={styles.label}>Customer Name *</label>
                       <input 
@@ -630,7 +630,7 @@ export default function JobsPage() {
                   {/* SUBFLOW B: REGISTER GARMENT INLINE (ZERO MODAL FLOW) */}
                   {isNewGarmentInline && (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', borderLeft: '3px solid var(--primary)', paddingLeft: '1rem' }}>
-                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+                      <div className={styles.layoutThreeCol}>
                         <div className={styles.inputGroup} style={{ marginBottom: 0 }}>
                           <label className={styles.label}>Category</label>
                           <select 
@@ -667,7 +667,7 @@ export default function JobsPage() {
                       </div>
 
                       {/* Presets Grid: Touchscreen selection for Size and Color */}
-                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+                      <div className={styles.gridTwoCol}>
                         <div>
                           <label className={styles.label}>Quick Size presets</label>
                           <div style={{ display: 'flex', gap: '0.25rem', flexWrap: 'wrap', marginTop: '0.25rem' }}>
@@ -717,7 +717,7 @@ export default function JobsPage() {
                         </div>
                       </div>
 
-                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                      <div className={styles.gridTwoCol}>
                         <div className={styles.inputGroup} style={{ marginBottom: 0 }}>
                           <label className={styles.label}>Garment Remarks</label>
                           <input 

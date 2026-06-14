@@ -270,3 +270,93 @@
 .table tr:hover td {
   background: rgba(15, 23, 42, 0.015);
 }
+
+/* --- Responsive Grid Layouts --- */
+
+/* For templates with Left Panel (fixed/wide) and Right Panel (fluid) */
+.layoutLeftFixed {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* For scan page with 400px fixed left */
+.layoutScan {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* For templates with Left Panel (fluid) and Right Panel (fixed/wide) */
+.layoutRightFixed {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* For jobs & masters with 340px right panel */
+.layoutJobs {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Three column layouts */
+.layoutThreeCol {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Two column split (1fr 1fr) */
+.gridTwoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* Garment page details upper layout (1fr 240px) */
+.layoutRight240 {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Form registration grids */
+.formRegisterGrid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1200px) {
+  .layoutLeftFixed,
+  .layoutScan,
+  .layoutRightFixed,
+  .layoutJobs,
+  .layoutRight240 {
+    grid-template-columns: 1fr;
+  }
+  
+  .formRegisterGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .layoutThreeCol {
+    grid-template-columns: 1fr;
+  }
+  .gridTwoCol {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+

@@ -280,7 +280,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Main Grid: Recent Activity & Quick Controls */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 360px', gap: '2rem', alignItems: 'start' }}>
+      <div className={styles.layoutRightFixed}>
         
         {/* Left Panel: Recent Job Cards */}
         <div className="glass-panel" style={{ padding: '1.5rem' }}>

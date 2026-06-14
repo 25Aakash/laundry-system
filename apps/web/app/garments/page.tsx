@@ -125,7 +125,7 @@ export default function GarmentsPage() {
   };
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '360px 1fr', gap: '2rem', alignItems: 'start' }}>
+    <div className={styles.layoutLeftFixed}>
       
       {/* Left Column: Garment List & Filter */}
       <div className="glass-panel" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem', minHeight: 'calc(100vh - 120px)' }}>
@@ -201,7 +201,7 @@ export default function GarmentsPage() {
         {selectedGarment ? (
           <>
             {/* Upper: Details & QR Label */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 240px', gap: '2rem', alignItems: 'start' }}>
+            <div className={styles.layoutRight240}>
               
               {/* Profile Card */}
               <div className="glass-panel" style={{ padding: '2rem', minHeight: '300px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
@@ -220,7 +220,7 @@ export default function GarmentsPage() {
                     </span>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem', marginBottom: '1.5rem' }}>
+                  <div className={styles.gridTwoCol} style={{ marginBottom: '1.5rem' }}>
                     <div>
                       <div className={styles.label}>Garment ID / QR</div>
                       <div style={{ fontWeight: 700, color: 'var(--primary)', fontSize: '1.1rem' }}>{selectedGarment.qrCode}</div>
@@ -277,7 +277,7 @@ export default function GarmentsPage() {
             </div>
 
             {/* Metrics Row */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
+            <div className={styles.layoutThreeCol}>
               <div className="glass-panel" style={{ padding: '1.25rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <div style={{ width: '40px', height: '40px', borderRadius: 'var(--radius-md)', background: 'var(--primary-glow)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <ShoppingBag size={20} />
@@ -377,11 +377,11 @@ export default function GarmentsPage() {
           </>
         }
       >
-        <form onSubmit={handleRegister} style={{ display: 'grid', gridTemplateColumns: '1fr 300px', gap: '2rem' }}>
+        <form onSubmit={handleRegister} className={styles.formRegisterGrid}>
           {/* Left Fields */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div className={styles.gridTwoCol}>
               <div className={styles.inputGroup}>
                 <label className={styles.label}>Select Owner Customer *</label>
                 <select 
@@ -411,7 +411,7 @@ export default function GarmentsPage() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div className={styles.gridTwoCol}>
               <div className={styles.inputGroup}>
                 <label className={styles.label}>Brand Name *</label>
                 <input
@@ -437,7 +437,7 @@ export default function GarmentsPage() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div className={styles.gridTwoCol}>
               <div className={styles.inputGroup}>
                 <label className={styles.label}>Size</label>
                 <input

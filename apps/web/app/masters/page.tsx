@@ -109,7 +109,7 @@ export default function MastersPage() {
       </div>
 
       {/* Content Area */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: '2rem', alignItems: 'start' }}>
+      <div className={styles.layoutJobs}>
         
         {/* Left Side: Table List */}
         <div className="glass-panel" style={{ padding: '1.5rem' }}>

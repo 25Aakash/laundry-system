@@ -61,6 +61,7 @@
   letter-spacing: -0.025em;
   background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -204,3 +205,121 @@
 .quickActionBtn:active {
   transform: translateY(1px);
 }
+
+/* --- Responsive Sidebar & Header --- */
+
+/* Close button in mobile sidebar logo area */
+.sidebarCloseBtn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.sidebarCloseBtn:hover {
+  background-color: rgba(15, 23, 42, 0.04);
+}
+
+/* Hamburger button in mobile header */
+.hamburgerBtn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: var(--radius-md);
+  margin-right: 0.75rem;
+  transition: background var(--transition-fast);
+}
+
+.hamburgerBtn:hover {
+  background-color: rgba(15, 23, 42, 0.04);
+}
+
+/* Backdrop for mobile sidebar drawer */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.3);
+  backdrop-filter: blur(4px);
+  z-index: 15;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.backdropActive {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform var(--transition-normal);
+    z-index: 20; /* Slide above everything, including sticky header */
+  }
+
+  .sidebarActive {
+    transform: translateX(0);
+  }
+
+  .sidebarCloseBtn {
+    display: flex;
+  }
+
+  .mainContent {
+    margin-left: 0 !important;
+  }
+
+  .hamburgerBtn {
+    display: flex;
+  }
+
+  .header {
+    padding: 0 1.25rem !important;
+  }
+
+  .contentBody {
+    padding: 1.25rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    height: auto;
+    min-height: 70px;
+    padding: 0.75rem 1rem !important;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  
+  .pageTitle {
+    font-size: 1.1rem;
+    flex-grow: 1;
+  }
+  
+  .headerActions {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+  
+  .quickActionBtn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}
+
